@@ -1,0 +1,14 @@
+330  knife bootstrap ec2-user@ansibletest1 -i ../devops.pem --sudo -N ansibletest1
+  331  knife node list
+  332  knife node show ansibletest1
+  336  knife cookbook create
+  352  knife cookbook upload 
+  353  knife cookbook upload example1
+
+330  knife bootstrap ec2-user@ansibletest1 -i ../devops.pem --sudo -N ansibletest1
+  331  knife node list
+  332  knife node show ansibletest1
+  336  knife cookbook create
+  352  knife cookbook upload 
+  353  knife cookbook upload example1
+
