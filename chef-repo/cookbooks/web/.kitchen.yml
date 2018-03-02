@@ -1,6 +1,10 @@
 ---
 driver:
-  name: vagrant
+  name: gce
+  project: winter-clone-191701
+  zone: us-east1-b
+  email: raghudevops25@gmail.com
+   
 
 provisioner:
   name: chef_zero
@@ -9,17 +13,24 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
 
+transport:
+  username: ec2-user
+  ssh_key:
+        - ~/devops.pem
+
 verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-16.04
   - name: centos-7
+    driver:
+      #image_project: winter-clone-191701
+      image_name: mycentos7
 
 suites:
   - name: default
     run_list:
-      - recipe[web::default]
+      - recipe[web::install]
     verifier:
       inspec_tests:
         - test/smoke/default

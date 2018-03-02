@@ -7,3 +7,5 @@ node_name                "admin"
 client_key               "#{current_dir}/admin.pem"
 chef_server_url          "https://chefserver.c.winter-clone-191701.internal/organizations/student"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+knife[:gce_project] = 'winter-clone-191701'
+knife[:gce_zone]    = 'us-east1-b'
